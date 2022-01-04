@@ -1,0 +1,113 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* Google Web Fonts CDN */
+@import url('htmls://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #222;
+    line-height: 3em;
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+    display: block;
+}
+
+
+.gnb a {
+    position: relative;
+}
+
+/* 빨간색 짝대기 before로 설정하고 absolute로 자리로부터 자유를 주고 너비와 높이를 부여함으로써 비로소 짝대기 완성 */
+.gnb a[id=tag1]:before {
+    content: '';
+    position: absolute;
+    background-color: crimson;
+    height: 2px;
+    width: 0;
+    bottom: 20px;
+    transition: 0.3s;
+}
+
+/* tag1 a태그에 마우스를 올릴 시, 너비를 100%로 확장하여 길게 만듬. 길이가 딱 맞아 떨어지는 이유는, 얘가 자식요소이기 때문에 부모 테두리 크기에 알아서 맞춤 */
+.gnb a[id=tag1]:hover:before {
+    width: 100%;
+}
+
+.gnb a[id=tag2]:before {
+    content: '';
+    position: absolute;
+    background-color: crimson;
+    height: 2px;
+    width: 0;
+    bottom: 20px;
+    transition: 0.3s;
+    right: 0;
+}
+
+.gnb a[id=tag2]:hover:before {
+    width: 100%;
+}
+
+/* */
+.gnb a[id=tag3]:before {
+    content: '';
+    position: absolute;
+    background-color: crimson;
+    height: 4px;
+    width: 4px;
+    bottom: 20px;
+    transition: 0.3s;
+    left: 0;
+
+}
+
+.gnb a[id=tag3]:hover:before {
+    left: calc(100% - 4px)
+}
+
+/* 중간이 3이라고 쳤을 때, 1에서 5까지 넘어가면 2가 오버되니까 오버된 2를 translateX(-50%)를 사용하여 다시 뒤로 후진 시킴. */
+.gnb a[id=tag4]:before {
+    content: '';
+    position: absolute;
+    background-color: crimson;
+    height: 2px;
+    width: 0;
+    bottom: 20px;
+    transition: 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gnb a[id=tag4]:hover:before {
+    width: 100%;
+}
+
+.gnb a[id=tag5]:before {
+    content: '';
+    position: absolute;
+    background-color: crimson;
+    height: 2px;
+    width: 100%;
+    bottom: 20px;
+    transition: 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gnb a[id=tag5]:hover:before {
+    width: 0;
+}
